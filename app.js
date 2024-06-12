@@ -26,7 +26,28 @@ app.post("/add",(req,res)=>{
     //to get this output it is must that express.json() in the above
 })
 
-app.get("/view",(req,res)=>{
+app.post("/search",(req,res)=>{
+
+    let input = req.body
+    coursemodel.find(input).then(
+
+        (data) => {
+
+            res.json(data)
+
+        }
+        
+    )
+    .catch()
+
+})
+
+
+
+
+
+
+app.post("/view",(req,res)=>{
 
     //res.send("view")
 //use find to retrive value form db. if find is true executed in the thena()
